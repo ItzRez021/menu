@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block title %}menu{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'home/css/menu.css' %}">
+    <link rel="icon" href="{{MU}}img/Group 1.svg" type="image/svg/png">
+{% endblock %}
+{% block body %}
+<header class="header">
+    <div class="header-wrp">
+        <h1 class="header-txt">sefr coffee</h1>
+        <!-- <h1 class="header-txt">صفر کافه</h1> -->
+        <div class="header-icon">
+            <img src="{{MU}}img/Group 2.svg" class="header-icon__img" alt="coffee-icon">
+        </div>
+    </div>
+</header>
+<!-- <section    class="categorie">
+    <div class="categorie-wrp">
+        <a href="#" class="categorie__items categorie__items--active">All</a>
+        <a href="#" class="categorie__items">Hot coffee</a>
+        <a href="#" class="categorie__items">ice coffee</a>
+        <a href="#" class="categorie__items">Hot drink</a>
+    </div>
+</section> -->
+<section    class="categorie">
+    <div class="categorie-wrp">
+        {% for c in CAT %}
+        <a href="{% url 'home:menu_filtered' c.pk %}" class="categorie__items {% if cat_pk is c.pk %}categorie__items--active{% endif %}">{{c.title}}</a>
+        {% endfor %}
+        <a href="{% url 'home:menu' %}" class="categorie__items {% if not cat_pk %}categorie__items--active{% endif %}">همه</a>
+    </div>
+</section>
+
+<section class="menu">
+    <div class="menu-wrp">
+        {% for f in FAD %}
+        <div class="menu-item">
+            <img src="{{f.pic.url}}" alt="{{f.name}}" class="menu-items__img">
+            <span class="menu-item__name">{{f.name}}</span>
+            <span class="menu-item__price">{{f.price}}</span>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

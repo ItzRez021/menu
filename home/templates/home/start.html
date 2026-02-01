@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}sefer coffee{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'home/css/start.css' %}">
+    <link rel="icon" href="{{MU}}img/Group 1.svg" type="image/svg/png">
+{% endblock %}
+{% block body %}
+    <div class="wrapper fade-up" data-aos="fade-up"
+     data-aos-duration="3000">
+      <div class="wrpper-content">
+        <img src="{{MU}}img/Group 1.svg" alt="" class="wrapper-content__img">
+        <span class="wrapper-content__txt">sefr coffee</span>
+    </div>
+        <a href="{% url 'home:menu' %}" class="wrapper-btn "   >مشاهده منو</a>
+
+    
+    </div>
+    <div class="shap-1 fade-up-right"></div>
+        <div class="shap-2"></div>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script> 
+  AOS.init(
+    
+  );
+</script>
+{% endblock %}

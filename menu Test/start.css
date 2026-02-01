@@ -1,0 +1,137 @@
+:root{
+    --color-primary:#1B4332;
+    --color-scondry:#D8F3DC;
+    --font-primary:morabba;
+    --font-scondry:morabba-bold;
+
+}
+@font-face {
+    font-family: morabba;
+    src: url(font/Morabba-Medium.woff2);
+}
+@font-face {
+    font-family: morabba-bold;
+    src: url(font/Morabba-Bold.woff2);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.wrapper{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    flex-direction: column;
+}
+.wrpper-content{
+    display: flex;
+    justify-content: center;
+    gap:2.5rem;
+    align-items: center;
+    flex-direction: column;
+}
+.wrapper-content__img{
+
+}
+.wrapper-content__txt{
+    color: var(--color-primary);
+    font-size: 56px;
+    
+    font-family: var(--font-scondry);
+}
+.wrapper-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    border-radius: 15px;
+    width: 10rem;
+    color: white;
+    font-family: var(--font-primary);
+    padding: 14px 30px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    text-decoration: none;
+}
+@keyframes shap-1 {
+    0%{
+        top:-5rem;
+    }
+ 
+    100%{
+       top: -3.5rem;
+    }
+ 
+}
+.shap-1{
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    border-radius:50% ;
+    left: -5rem;
+    top:  -5rem;
+    z-index: 1;
+    background-color:var(--color-primary) ;
+    filter: blur(7px);
+    -webkit-border-radius:50% ;
+    -moz-border-radius:50% ;
+    -ms-border-radius:50% ;
+    -o-border-radius:50% ;
+    animation: shap-1 2s linear infinite alternate;
+    -webkit-animation: shap-1 2s linear infinite alternate;
+}
+@keyframes shap-2 {
+    0%{
+        bottom: 0;
+    }
+ 
+    100%{
+        bottom: 1.5rem;
+    }
+ 
+}
+.shap-2{
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    border-radius:50% ;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color:var(--color-primary) ;
+    filter: blur(7px);
+    -webkit-border-radius:50% ;
+    -moz-border-radius:50% ;
+    -ms-border-radius:50% ;
+    -o-border-radius:50% ;
+    animation: shap-2 2s linear infinite alternate;
+    -webkit-animation: shap-2 2s linear infinite alternate;
+}
+
+
+
+ @media (max-width: 315px) {
+    .shap-1,.shap-2{
+        display: none;
+    }
+    .wrapper-content__txt{
+        font-size: 40px;
+        font-weight: 700;
+    }
+}
