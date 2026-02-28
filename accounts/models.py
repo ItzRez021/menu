@@ -1,7 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager,PermissionsMixin
 
-# Create your models here.
+
+
+
+#abstract user created
 
 class UserManager(BaseUserManager):
     def create_user(self,number,password):

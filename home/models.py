@@ -1,6 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+#Category and Foond_and Drink model created for admin of the site to upload the products
 
 class Category(models.Model):
     title = models.CharField(max_length=50)
